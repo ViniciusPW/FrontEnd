@@ -2,6 +2,66 @@
 HTML fornece a estrutura de um web site;
 CSS fornece estilo para o site;
 Javascript é utilizado para fornecer comportamento.
+
+    TAGS:
+
+<p> <\p> delimitam um parágrafo.
+
+<br> e <hr> são tags que não possuem fechamento. Representam quabra de linha e 
+régua horizontal, reespectivamente.
+
+A tag <meta> também não tem fechamento e serve para informar metadados do documento.
+
+Tags podem tem atributos. Em especial, o atributo id, atribuído a um elemento, 
+deve ser único dentro do escopo do HTML. Ex: <p id="meuId"> ... </p>
+
+Elementos pode ser de nível de bloco e de nível de linha. Elementos de nível de 
+bloco geram um parágrafo novo, enquanto elementos de linha são executados na mesma 
+linha. Elementos de linha podem ser utilizado dentro de outros elementos de linha 
+e bloco, enquanto elementos de bloco só podem ser utilizados dentro de outros 
+elementos de bloco.
+
+<div> </div> -> tag de bloco
+<span> </span> -> tag de linha
+
+De maneira mais estrita, existem sete tipos de conteúdos em HTML:
+
+1 - Flow content: conteúdo que normalmente é de nível de bloco. Serve para organização 
+do documento.
+
+2 - Phrasing content: texto do documento e elementos que marcam o texto dentro dos 
+parágrafos. Conteúdo normalmente é de nível de linha.
+
+3 - Embedded content: conteúdo que importa recursos ao documento. Ex: audio, etc.
+
+4 - Interactive content: feito pretendidamente para interação com o usuário.
+
+5 - Meta content: ajusta a apresentação ou comportamento dos elementos, ou define a 
+relação do documento html com outros documentos.
+
+6 - Heading content: define os cabeçalhos do documento.
+
+7 - Sectioning content: define o escopo dos cabeçalhos e rodapés.
+
+    Listas:
+
+Listas não ordenadas (bullet lists) podem ser criadas com as tagas <ul> </ul>. 
+Dentro de <ul> </ul>, o que estiver escrito dentro de <li> </li> é entendido como 
+um elemento da lista.
+
+Listas ordenadas são demarcadas pelas tags <ol> </ol>. Dentro dela, os elementos 
+também são delimitados por <li> </li>.
+
+    Caracteres especiais:
+
+Os caracteres '<',  '<' e '&' não podem ser usados em textos no html, pois podem 
+causar erros de interpretação pelo navegador. Caso se queira representar esses 
+caracteres, deve-se utilizar '&lt;', "&gt;" e '&amp;'.
+
+O '&' também pode ser utilizado para referênciar outros símbolos. Por exemplo, 
+'&copy;' representa o símbolo de copyright, e '&nbsp;' cria um espaçamento sem quebra 
+de linha.
+
 -->
 
 
@@ -9,11 +69,7 @@ Javascript é utilizado para fornecer comportamento.
 <html>
 <head>
     <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Vini Page</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <title>Vini Page</title> 
 </head>
 <body>
     <h1>Hello, world!</h1>

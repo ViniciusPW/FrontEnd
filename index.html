@@ -62,6 +62,222 @@ O '&' também pode ser utilizado para referênciar outros símbolos. Por exemplo
 '&copy;' representa o símbolo de copyright, e '&nbsp;' cria um espaçamento sem quebra 
 de linha.
 
+    Links:
+
+Links podem ser inseridos no texto com a tag <a> </a> com atributo href="link" e 
+title="titulo". Ex: <a href="link_da_pagina" title="titulo que se quer dar">Texto
+no qual a url será embarcada</a>. O atributo target="_blank" força a página a abrir 
+o link em uma nova aba.
+
+    Imagens:
+
+Imagens são adicionadas a página utilizando a tag <imag> </img> com o atributo src 
+apontando para o link imagem. Os atributos width e height são utilizados para definir 
+largura e altura customizadas e o atributo alt para descrevê-la.
+
+
+    CSS:
+
+CSS (Cascading Style Sheets) define regras para estilar o html. Ex: 
+
+p {
+    color: blue;
+    font-size: 20px;
+    width: 200px;
+}
+
+O seletor p simboliza que a regra definida se aplicará às tags de parágrafo <p> </p>.
+
+A coleção de diferentes regras é chamado de folha de estilos (stylesheets).
+
+O estilo pode ser aplicado utilizando definindo dentro das tags <head> <style> ... 
+</style> </head> para definir propriedades para a página html em questão. Também pode-se
+utilizar stylesheets, que são arquivos .css, específicas, o que permite a reutilização 
+dos mesmo estilos em diferentes páginas. O método menos utilizado para a aplicação de 
+estilos é o inline, na qual a propriedade style define as regras para uma única tag.
+
+<p style="text-align: center;"> ... </p>
+
+Para se importar uma stylesheet externa, usa-se a tag <link> dentro do <head>. Ex:
+
+<link rel="stylesheet" href="meuestilo.css">
+
+Existem diferentes tipos de seletores, cada um para funcionalidades diferentes. 
+
+O seletor de elementos é dado pela especificação do nome do elemento. Ex: 
+
+p {
+    propriedade: valor;
+}
+
+p é o seletor do elemento <p> </p>.
+
+O seletor de classe é especificado colocando um ponto . no começo do nome da classe. 
+Ex: 
+
+.blue {
+    color: blue;
+}
+
+Para cada elemento que se quer que a propriedade da classe seja aplicada, deve-se 
+utilizar o atributo class com o nome da classe sem o ponto. Ex:
+
+<p class="blue"> ... </p>
+<div class="blue"> ... </div>
+
+O seletor de id é semelhante ao seletor de classe, porém com o símbolo #. Ids são 
+únicos dentro de uma página, então utilizar seletor de id garante que apenas um 
+elemento será afetado. Ex:
+
+#name {
+    color: blue;
+}
+
+<p id="name"> ... </p>
+
+Regras que possuem a mesma declaração, mas seletores diferentes, podem ser agrupadas:
+
+div, .blue {
+    color: blue;
+}
+ 
+Seletores também pode ser combinados para selecionar de maneira mais distintiva. Por ex, 
+a combinação abaixo afeta apenas os elementos do tipo <p> </p> que possuem a classe 
+"big":
+
+p.big {
+    font-size: 20px;
+}
+
+O seletor do tipo filho serve para atribuir a regra apenas para os elementos de 
+um tipo que estão dentro de outro tipo. Ex: 
+
+article > p {
+    color: blue;
+}
+
+<article> 
+    <p> ... </p>
+</article>
+
+O elemento p da estrutura abaixo não é afetado pois não é um filho direto de article:
+
+<article> 
+    <div>
+        <p> ... </p>
+    </div>
+</article>
+
+Em compensação, o seletor de descendente funciona para qualquer elemento que esteja 
+dentro de outro, independente do nível em que se encontre:
+
+article p {
+    color: blue;
+}
+
+<article> 
+    <div>
+        <p> ... </p>
+    </div>
+</article>
+
+Seletores de pseudo-classe são utilizados para estilizar objetos que são difíceis 
+de atingir com classes simples, ou para estilizar conforme intereção com o usuário.
+Especificação:
+
+seletor:pseudo-classe {
+    ...
+}
+
+    Conflitos:
+
+Quando duas regras conflitantes são inseridas no mesmo documento, a última regra 
+declarada é a que vale. Se as duas regras tiverem sidas declaradas para um mesmo 
+elemento, porém alterando propriedades diferentes, elas são mescladas.
+
+Quando uma regra é definida para um elemento, ela passa a aplicar para todos os 
+elementos que são descendentes do primeiro, a não ser que especificado de maneira 
+diferente por outra regra.
+
+Se diferentes tipos de seletores forem aplicados a um elemento, a regra definida 
+pelo seletor mais específico ganha.
+
+A palavra chave !important pode ser utilizada dentro de uma regra para definir a 
+propriedade especificada como prioritária.
+
+p {
+    color: green !important;
+}
+
+    Modelo caixa:
+
+Em HTML, cada elemento é modelado como uma caixa. Ele contém não apenas o conteúdo 
+em si, mas também uma borda, padding, margem, altura e largura.
+
+Margens de elementos diferentes são cumulativas se eles estiverem um do lado do outro. 
+Caso os elementos estejam um em cima do outro, a margem será igual a maior margem. 
+
+Elements marcados com a propriedade float saem do fluxo normal do documento. Eles 
+param de obedecer a hierarquia do documento.
+
+A propriedade "position: relative" pode de ser adicionada a um elemento para fazer 
+com que qualquer mudança de posicionamento posterior seja relativa a sua posição 
+anterior. Os elementos podem ser movidos adicionando offsets com as propriedades 
+top, left, bottom e right, informando em qual posição, dada em pixels, 
+quer-se o elemento.
+
+Utilizando "position: absolute", o objeto será posicionado de maneira relativa ao 
+ao objeto ascendente mais próximo. Se outros elementos estiverem dentro do marcado 
+como "position: absolute", o offset desse objeto principal moverá todos os de dentro.
+
+Quando se usa posição relativa, o navegador entende que o objeto estará na sua posição 
+inicial, mesmo que tenha sido movido.
+
+Quando se usa posição absoluta, o elemento é tirado do fluxo normal do documento html.
+
+A posição padrão dos elementos é "static", exceto pelo próprio <html> </html>, que 
+tem como posição padrão "relative".
+
+    Media Queries:
+
+As consultas de mídia permitem agrupar estilos juntos e direcioná-los para 
+dispositivos específicos com base em algum critério. Dispositivos podem ser 
+selecionados com base em resolução de tela e orientação (paisagem / retrato), 
+por exemplo. Sintaxe:
+
+/* Se a característica de mídia (entre parênteses) for verdadeira,
+o estilo é aplicado */
+@media (max-width: 767px) { 
+    p {
+        color: blue;
+    }
+}
+
+As características de mídia podem ser agrupadas com operadores lógicos:
+
+@media (min-width: 768px) and (max-width: 991px) { ... }    /* AND */
+@media (max-width: 767px) , (min-width: 992px) { ... }      /* OR */
+
+    Responsive Design:
+
+A ideia de designs responsivo é fazer com que o layout do site se adapte ao dispositivo 
+no qual é exibido. Isso significa utilizar grids baseadas em proporção, imagens 
+flexíveis e consultas de mídia.
+
+    Sistema de Grid Bootstrap
+
+No bootstrap, o fluxo de instruções tende a ser parecido com:
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">Coluna 1</div>
+        ...
+    </div>
+</div>
+
+O importante são as classes. Elas não precisam ser utilizadas com elementos div, mas 
+devem ser especificadas da ordem correta para atribuir as propriedades do grid.
+
 -->
 
 

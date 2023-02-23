@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.title {
+    position: relative;
+    float:right;
+    margin: 0% 0% 1% 1%;
+    width: 50%;
+    text-align: center;
+    border: 1px solid black;
+    background-color: rgb(255, 153, 250);
+}
+
+h1 {
+    text-align: center;
+}
+
+/********** Desktop **********/
+@media (min-width: 992px) {
+    .desktop {
+        margin: 1%;
+        padding: 0% 0% 1% 1%;
+        width: 31%;
+        border: 1px solid black;
+        background-color: rgb(172, 172, 172);
+        float: left;
+    }
+}
+    
+  
+/********** Tablet **********/
+@media (min-width: 768px) and (max-width: 991px) {
+    .tablet1 {
+        margin: 1%;
+        padding: 0% 0% 1% 1%;
+        width: 48%;
+        border: 1px solid black;
+        background-color: rgb(172, 172, 172);
+        float: left;
+    }
+    .tablet2 {
+        margin: 1%;
+        padding: 0% 0% 1% 1%;
+        width: 98%;
+        border: 1px solid black;
+        background-color: rgb(172, 172, 172);
+        float: left;
+    }
+}
+
+/********** Smartphone **********/
+@media (max-width: 767px) {
+    .phone {
+        margin: 1%;
+        padding: 0% 0% 1% 1%;
+        width: 98%;
+        border: 1px solid black;
+        background-color: rgb(172, 172, 172);
+        float: left;
+    }
+}
+
